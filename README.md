@@ -84,3 +84,25 @@ Pure Python is still important when environments restrict package use or for dee
 
 ---
 
+---
+
+## 📦 Week 2 Extension – Generalization to Public Datasets
+
+In Week 2, the system was extended to demonstrate flexibility beyond the election datasets. A widely used public dataset, `titanic_train.csv` from the Kaggle Titanic competition, was chosen.
+
+The same statistical scripts were reused with small modifications:
+- Changed `FILE_PATH` to point to `data/titanic_train.csv`
+- Replaced `Facebook_Id` with appropriate grouping columns like `Pclass` and `Sex`
+
+### 🔁 Modified Scripts for Titanic Dataset
+- `pure_python_stats.py` → grouped by `Pclass`
+- `pandas_stats.py` → grouped by `Sex`
+- `polars_stats.py` → grouped by `Pclass`
+
+This validated the design’s modularity and generality — confirming that:
+- All numeric and non-numeric stats worked without changes to core logic
+- Grouping and value count logic handled new column names smoothly
+- Outputs were consistent across formats
+
+This shows that the system is capable of handling **arbitrary structured datasets** with minimal adjustments, making it reusable for other real-world CSV files.
+

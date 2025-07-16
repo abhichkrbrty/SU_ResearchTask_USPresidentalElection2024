@@ -1,6 +1,6 @@
 import pandas as pd
 
-FILE_PATH = '../data/2024_fb_posts_president_scored_anon.csv'
+FILE_PATH = '../data/titanic_train.csv'
 
 def main():
     df = pd.read_csv(FILE_PATH)
@@ -20,8 +20,8 @@ def main():
         print(f"Unique count: {df[col].nunique()}")
 
     # Group by Facebook_Id
-    print("\nGrouped by Facebook_Id (showing stats for first 3 groups):")
-    grouped = df.groupby('Facebook_Id')
+    print("\nGrouped by Sex (showing stats for first 3 groups):")
+    grouped = df.groupby('Sex')
     for group, sub_df in list(grouped)[0:3]:
         print(f"\nGroup: {group}")
         print(sub_df.describe(include='all'))

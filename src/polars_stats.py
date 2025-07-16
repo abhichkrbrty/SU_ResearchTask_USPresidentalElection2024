@@ -1,6 +1,6 @@
 import polars as pl
 
-FILE_PATH = '../data/2024_fb_posts_president_scored_anon.csv'
+FILE_PATH = '../data/titanic_train.csv'
 
 def main():
     df = pl.read_csv(FILE_PATH)
@@ -21,10 +21,10 @@ def main():
 
     # Grouped stats
     print("\n=== Grouped by Facebook_Id (first 3 groups) ===")
-    groups = df.group_by("Facebook_Id")
+    groups = df.group_by("Pclass")
 
     for group_key, group_df in list(groups)[:3]:
-        print(f"\nGroup: Facebook_Id={group_key[0]}")
+        print(f"\nGroup: Pclass={group_key[0]}")
         print(group_df.describe())
 
 if __name__ == "__main__":

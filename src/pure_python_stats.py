@@ -3,9 +3,9 @@ from collections import defaultdict, Counter
 from statistics import mean
 
 # === CONFIG ===
-FILE_PATH = '../data/2024_fb_posts_president_scored_anon.csv'
-PRIMARY_GROUP_COL = 'Facebook_Id'
-SECONDARY_GROUP_COL = 'post_id'  # Change to 'ad_id' if you work with ad data
+FILE_PATH = '../data/titanic_train.csv'
+PRIMARY_GROUP_COL = 'Sex'
+SECONDARY_GROUP_COL = 'Survived'  # Change to 'ad_id' if you work with ad data
 
 # === HELPERS ===
 
